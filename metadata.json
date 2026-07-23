@@ -1,0 +1,6 @@
+{
+  "name": "Deutsch TZ",
+  "description": "German Language Learning App for Tanzanians with Swahili UI, AI Tutor & M-Pesa Verification",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
