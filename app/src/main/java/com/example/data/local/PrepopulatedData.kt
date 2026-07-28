@@ -7,7 +7,7 @@ import com.example.data.model.VocabItem
 object PrepopulatedData {
 
     val defaultLessons = listOf(
-        // LEVEL A1 (Basic & FREE)
+        // ==================== LEVEL A1 (Basic & FREE) ====================
         LessonEntity(
             id = 1,
             level = "A1",
@@ -60,10 +60,23 @@ object PrepopulatedData {
             isLocked = false,
             requiredPlan = "FREE"
         ),
-
-        // LEVEL A2 (Basic Plan required)
         LessonEntity(
             id = 5,
+            level = "A1",
+            lessonNumber = 5,
+            titleGerman = "Uhrzeit & Tagesablauf",
+            titleSwahili = "Muda na Ratiba ya Siku",
+            swahiliIntro = "Kusema muda na saa kwa Kijerumani, na kueleza ratiba yako ya kila siku.",
+            grammarExplanationSwahili = "Saa kwa Kijerumani inatumika mfumo wa saa 24 rasmi au saa 12 kijamii. Mfano: 'Es ist acht Uhr' (Ni saa mbili asubuhi / 8:00).",
+            culturalTipSwahili = "Kushikilia muda (Pünktlichkeit) ni nguzo ya utamaduni wa Kijerumani. Chelewa dakika 5 utaonekana huna nidhamu!",
+            isCompleted = false,
+            isLocked = false,
+            requiredPlan = "FREE"
+        ),
+
+        // ==================== LEVEL A2 (Basic Plan required) ====================
+        LessonEntity(
+            id = 6,
             level = "A2",
             lessonNumber = 1,
             titleGerman = "Einkaufen & Wochenmarkt",
@@ -76,7 +89,7 @@ object PrepopulatedData {
             requiredPlan = "BASIC"
         ),
         LessonEntity(
-            id = 6,
+            id = 7,
             level = "A2",
             lessonNumber = 2,
             titleGerman = "Wegbeschreibung & Orientierung",
@@ -88,10 +101,23 @@ object PrepopulatedData {
             isLocked = true,
             requiredPlan = "BASIC"
         ),
-
-        // LEVEL B1 (Standard Plan required)
         LessonEntity(
-            id = 7,
+            id = 8,
+            level = "A2",
+            lessonNumber = 3,
+            titleGerman = "Wohnen & Möbel",
+            titleSwahili = "Nyumba na Samani",
+            swahiliIntro = "Kueleza nyumba yako, vyumba, na kupanga samani za nyumbani kwa Kijerumani.",
+            grammarExplanationSwahili = "Matumizi ya Wechselpräpositionen (vihusishi vinavyobadilika kati ya Akkusativ na Dativ): in, an, auf, unter, über.",
+            culturalTipSwahili = "Pango la nyumba Ujerumani hutofautisha Kaltmiete (pango bila huduma) na Warmmiete (pango linalojumuisha maji na usafi).",
+            isCompleted = false,
+            isLocked = true,
+            requiredPlan = "BASIC"
+        ),
+
+        // ==================== LEVEL B1 (Standard Plan required) ====================
+        LessonEntity(
+            id = 9,
             level = "B1",
             lessonNumber = 1,
             titleGerman = "Beruf & Vorstellungsgespräch",
@@ -104,7 +130,7 @@ object PrepopulatedData {
             requiredPlan = "STANDARD"
         ),
         LessonEntity(
-            id = 8,
+            id = 10,
             level = "B1",
             lessonNumber = 2,
             titleGerman = "Medien, Kultur & Umwelt",
@@ -116,10 +142,23 @@ object PrepopulatedData {
             isLocked = true,
             requiredPlan = "STANDARD"
         ),
-
-        // LEVEL B2 (Premium Plan required)
         LessonEntity(
-            id = 9,
+            id = 11,
+            level = "B1",
+            lessonNumber = 3,
+            titleGerman = "Gesundheit & Medizin",
+            titleSwahili = "Afya na Tiba",
+            swahiliIntro = "Eleza dalili za ugonjwa, zungumza na daktari, na nunua dawa kwenye duka la dawa (Apotheke).",
+            grammarExplanationSwahili = "Matumizi ya Reflexive Verben (Vitenzi vinavyojirejea): 'sich fühlen' (kujisikia), 'sich erholen' (kupumzika/kupona). Mfano: Ich fühle mich krank.",
+            culturalTipSwahili = "Duka la dawa Ujerumani linaitwa Apotheke na hutambuliwa kwa herufi kubwa nyekundu 'A'. Duka la vipodozi na usafi linaitwa Drogerie.",
+            isCompleted = false,
+            isLocked = true,
+            requiredPlan = "STANDARD"
+        ),
+
+        // ==================== LEVEL B2 (Premium Plan required) ====================
+        LessonEntity(
+            id = 12,
             level = "B2",
             lessonNumber = 1,
             titleGerman = "Wirtschaft, Diplomatie & Wissenschaft",
@@ -127,6 +166,19 @@ object PrepopulatedData {
             swahiliIntro = "Somo la kiwango cha juu kwa ajili ya wataalamu, wanadiplomasia, na wanafunzi wanaojiandaa na masomo ya Shahada za Juu (Master/PhD) Ujerumani.",
             grammarExplanationSwahili = "Nomen-Verb-Verbindungen (Viunganishi vya Jina na Kitenzi): 'Einfluss nehmen auf' (Kuwepo na athari juu ya), 'In Betracht ziehen' (Kufikiria/Kutilia maanani). Miundo hii inaboresha sana uandishi wa kiakademia.",
             culturalTipSwahili = "Uhusiano wa kidiplomasia kati ya Tanzania na Ujerumani una historia ndefu kuanzia mambo ya utamaduni, utafiti wa kisayansi, na ushirikiano wa kiuchumi.",
+            isCompleted = false,
+            isLocked = true,
+            requiredPlan = "PREMIUM"
+        ),
+        LessonEntity(
+            id = 13,
+            level = "B2",
+            lessonNumber = 2,
+            titleGerman = "Politik, Gesellschaft & Integration",
+            titleSwahili = "Siasa, Jamii na Utangamano",
+            swahiliIntro = "Zungumzia miundo ya siasa ya Ujerumani (Bundesrat, Bundestag) na changamoto za kijamii.",
+            grammarExplanationSwahili = "Konjunktiv I kwa ajili ya kuripoti kauli za wengine (Indirekte Rede): 'Er sagte, er habe keine Zeit.'",
+            culturalTipSwahili = "Ujerumani ni nchi yenye shirikisho la majimbo 16 (Bundesländer), kila jimbo likiwa na serikali na mfumo wake wa elimu.",
             isCompleted = false,
             isLocked = true,
             requiredPlan = "PREMIUM"
@@ -168,6 +220,43 @@ object PrepopulatedData {
                 VocabItem("Die Rechnung", "Bili", "Dii Rekh-nung", "Zahlen, bitte! Die Rechnung.", "Kulipia tafadhali! Lete bili."),
                 VocabItem("Lecker", "Tamu sana", "Le-ker", "Das Essen ist sehr lecker!", "Chakula hiki ni tamu sana!"),
                 VocabItem("Guten Appetit!", "Mlo mwema / Karibu chakula!", "Guu-ten A-pe-tiit!", "Guten Appetit zusammen!", "Mlo mwema nyote!")
+            )
+            4 -> listOf(
+                VocabItem("Der Vater", "Baba", "Der Faa-ter", "Mein Vater heißt Hassan.", "Baba angu anaitwa Hassan."),
+                VocabItem("Die Mutter", "Mama", "Dii Muu-ter", "Meine Mutter kocht gut.", "Mama angu anapika vizuri."),
+                VocabItem("Das Kind", "Mtoto", "Das Kind", "Das Kind spielt.", "Mtoto anacheza."),
+                VocabItem("Der Bruder", "Kaka / Ndugu wa kiume", "Der Bruu-der", "Mein Bruder wohnt in Arusha.", "Kaka angu anakaa Arusha."),
+                VocabItem("Die Schwester", "Dada / Ndugu wa kike", "Dii Shves-ter", "Meine Schwester studiert.", "Dada angu anasoma.")
+            )
+            5 -> listOf(
+                VocabItem("Die Uhr", "Saa", "Dii Uur", "Wie viel Uhr ist es?", "Ni saa ngapi?"),
+                VocabItem("Es ist acht Uhr", "Ni saa mbili (8:00)", "Es ist akht uur", "Es ist acht Uhr morgens.", "Ni saa mbili asubuhi."),
+                VocabItem("Der Tag", "Siku", "Der Taag", "Einen schönen Tag noch!", "Siku njema!")
+            )
+            6 -> listOf(
+                VocabItem("Einkaufen", "Kufanya manunuzi", "Ain-kau-fen", "Ich gehe einkaufen.", "Nenda kufanya manunuzi."),
+                VocabItem("Der Apfel", "Tunda la apeli", "Der Ap-fel", "Ein roter Apfel.", "Apeli jekundu."),
+                VocabItem("Der Markt", "Soko", "Der Markt", "Der Wochenmarkt ist heute.", "Soko la wiki liko leo.")
+            )
+            7 -> listOf(
+                VocabItem("Der Bahnhof", "Kituo cha treni", "Der Baan-hoof", "Wo ist der Bahnhof?", "Kituo cha treni kiko wapi?"),
+                VocabItem("Links", "Kushoto", "Links", "Biegen Sie links ab.", "Kata kushoto."),
+                VocabItem("Rechts", "Kulia", "Rekhts", "Gehen Sie nach rechts.", "Nenda kulia.")
+            )
+            8 -> listOf(
+                VocabItem("Die Wohnung", "Nyumba / Fleti", "Dii Voo-nung", "Meine Wohnung ist groß.", "Nyumba yangu ni kubwa."),
+                VocabItem("Das Zimmer", "Chumba", "Das Tsi-mer", "Drei Zimmer.", "Vyumba vitatu."),
+                VocabItem("Der Tisch", "Meza", "Der Tish", "Ein Tisch aus Holz.", "Meza ya mbao.")
+            )
+            9 -> listOf(
+                VocabItem("Der Beruf", "Kazi / Taaluma", "Der Be-ruuf", "Was sind Sie von Beruf?", "Kazi yako ni ipi?"),
+                VocabItem("Das Vorstellungsgespräch", "Usahili wa kazi (Interview)", "Das For-shtel-ungs-ge-shpraekh", "Morgen habe ich ein Vorstellungsgespräch.", "Kesho nina usahili wa kazi."),
+                VocabItem("Der Lebenslauf", "Wasifu wa kazi (CV)", "Der Lee-bens-lauf", "Hier ist mein Lebenslauf.", "Huu hapa wasifu wangu wa kazi.")
+            )
+            10 -> listOf(
+                VocabItem("Die Umwelt", "Mazingira", "Dii Um-velt", "Wir müssen die Umwelt schützen.", "Lazima tulinde mazingira."),
+                VocabItem("Die Zeitung", "Gazeti", "Dii Tsai-tung", "Ich lese die Zeitung.", "Ninasoma gazeti."),
+                VocabItem("Müll trennen", "Kutenganisha taka", "Muul tre-nen", "In Deutschland muss man Müll trennen.", "Ujerumani lazima utenganishe taka.")
             )
             else -> listOf(
                 VocabItem("Lernen", "Kujifunza", "Ler-nen", "Ich lerne Deutsch.", "Jifunze Kijerumani."),
@@ -220,12 +309,20 @@ object PrepopulatedData {
                     explanationSwahili = "'Wie viel kostet das?' inamaanisha 'Hii inagharimu kiasi gani?' au 'Bei gani?'."
                 )
             )
-            else -> listOf(
+            3 -> listOf(
                 QuizQuestion(
                     questionSwahili = "Je, 'Ich möchte Kaffee' maana yake ni nini kwa Kiswahili?",
                     options = listOf("Sitaki kahawa", "Ningependa kahawa", "Kahawa ni mbaya", "Kesho nitakunywa kahawa"),
                     correctAnswerIndex = 1,
                     explanationSwahili = "'Ich möchte...' inamaanisha 'Ningependa...' - lugha ya adabu na heshima."
+                )
+            )
+            else -> listOf(
+                QuizQuestion(
+                    questionSwahili = "Je, 'Ich lerne Deutsch' inamaanisha nini?",
+                    options = listOf("Ninasoma Kijerumani", "Ninazungumza Kiswahili", "Ninakwenda Ujerumani", "Mimi ni Mjerumani"),
+                    correctAnswerIndex = 0,
+                    explanationSwahili = "'Ich lerne Deutsch' inamaanisha 'Ninasoma/Jifunze Kijerumani'."
                 )
             )
         }

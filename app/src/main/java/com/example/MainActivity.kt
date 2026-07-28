@@ -20,7 +20,10 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.ui.components.AppBottomNavigation
 import com.example.ui.components.Screen
-import com.example.ui.screens.AdminVerificationScreen
+import com.example.ui.screens.AdminPinGateScreen
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import com.example.ui.screens.AiTutorScreen
 import com.example.ui.screens.DashboardScreen
 import com.example.ui.screens.LessonCatalogScreen
@@ -177,13 +180,22 @@ fun MainAppScreen(mainViewModel: MainViewModel = viewModel()) {
             }
 
             composable(Screen.Admin.route) {
-                AdminVerificationScreen(
-                    receipts = receipts,
-                    onBack = { navController.popBackStack() },
-                    onVerifyReceipt = { receiptId, approve, notes ->
-                        mainViewModel.verifyPaymentAsAdmin(receiptId, approve, notes)
-                    }
-                )
+                var isAdminAuthed by remember { mutableStateOf(false) }
+
+                if (!isAdminAuthed) {
+                    AdminPinGateScreen(
+                        onBack = { navController.popBackStack() },
+                        onAuthenticated = { isAdminAuthed = true }
+                    )
+                } else {
+                    com.example.ui.screens.AdminVerificationScreen(
+                        receipts = receipts,
+                        onBack = { navController.popBackStack() },
+                        onVerifyReceipt = { receiptId, approve, notes ->
+                            mainViewModel.verifyPaymentAsAdmin(receiptId, approve, notes)
+                        }
+                    )
+                }
             }
 
             composable(Screen.Profile.route) {

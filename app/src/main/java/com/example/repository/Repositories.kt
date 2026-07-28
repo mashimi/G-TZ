@@ -49,7 +49,8 @@ class UserRepository(private val userDao: UserDao) {
 
 class PaymentRepository(
     private val paymentDao: PaymentDao,
-    private val userDao: UserDao
+    private val userDao: UserDao,
+    private val firebaseService: com.example.data.remote.FirebasePaymentService = com.example.data.remote.FirebasePaymentService()
 ) {
     val allReceipts: Flow<List<PaymentReceiptEntity>> = paymentDao.getAllReceiptsFlow()
 
@@ -69,7 +70,27 @@ class PaymentRepository(
             status = PaymentStatus.PENDING.name,
             submittedAtTimestamp = System.currentTimeMillis()
         )
-        return paymentDao.insertReceipt(receipt)
+        val localId = paymentDao.insertReceipt(receipt)
+
+        // Asynchronously submit to Firestore backend as well
+        try {
+            val firestoreReceipt = com.example.data.remote.FirestoreReceipt(
+                userId = 1,
+                userName = "Mwanafunzi",
+                planRequested = planRequested,
+                amountTzs = amountTzs,
+                mpesaRef = mpesaRef,
+                phoneNumber = phoneNumber,
+                receiptImageUrl = receiptImageUri,
+                status = PaymentStatus.PENDING.name,
+                submittedAtTimestamp = System.currentTimeMillis()
+            )
+            firebaseService.submitPayment(firestoreReceipt)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+        return localId
     }
 
     suspend fun verifyReceiptByAdmin(receiptId: Long, approve: Boolean, adminNotes: String) {
